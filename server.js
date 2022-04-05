@@ -32,6 +32,8 @@ app.get('/api/notes/:id', (req, res) => {
   }
 })
 
+// need validation+++++++++++++++++
+
 // function for creating a new note
 function createNewNote(body, notesArray) {
   const note = body
@@ -45,7 +47,6 @@ function createNewNote(body, notesArray) {
   return note
 }
 
-
 // api for creating a note
 app.post('/api/notes', (req, res) => {
   req.body.id = notes.length.toString();
@@ -53,6 +54,12 @@ app.post('/api/notes', (req, res) => {
   res.json(note)
 })
 
+app.get("/",(req,res)=>{
+  res.sendFile(path.join(__dirname, "./public/index.html"))
+})
+app.get("/notes",(req,res)=>{
+  res.sendFile(path.join(__dirname, "./public/notes.html"))
+})
 // telling the app where to find my port.
 app.listen(PORT, () => {
   console.log(`Server is up on port ${PORT}`);
