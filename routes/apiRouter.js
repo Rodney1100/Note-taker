@@ -24,7 +24,6 @@ router.get('/notes/:id', (req, res) => {
   }
 })
 
-// need validation+++++++++++++++++
 // function for creating a new note
 function createNewNote(body, notesArray) {
   const note = body
@@ -46,9 +45,5 @@ router.post('/notes', (req, res) => {
 })
 
 // deleting a note
-router.delete("/note/:id", (req, res) => {
-
-})
-
 
 module.exports = router
